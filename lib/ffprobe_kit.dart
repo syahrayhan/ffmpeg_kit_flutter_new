@@ -49,11 +49,15 @@ class FFprobeKit {
     return session;
   }
 
-  /// Starts an asynchronous FFprobe execution for the given command. Space character is used to split the command
-  /// into arguments. You can use single or double quote characters to specify arguments inside your command.
+  /// Starts an asynchronous FFprobe execution for the given command.
+  /// Space character is used to split the command
+  /// into arguments. You can use single or double quote characters
+  /// to specify arguments inside your command.
   ///
-  /// Note that this method returns immediately and does not wait the execution to complete. You must use an
-  /// [FFprobeSessionCompleteCallback] if you want to be notified about the result.
+  /// Note that this method returns immediately and does not wait the
+  /// execution to complete. You must use an
+  /// [FFprobeSessionCompleteCallback] if you want to be notified
+  /// about the result.
   static Future<FFprobeSession> executeAsync(String command,
           [FFprobeSessionCompleteCallback? completeCallback = null,
           LogCallback? logCallback = null]) async =>
@@ -64,8 +68,10 @@ class FFprobeKit {
 
   /// Starts an asynchronous FFprobe execution with arguments provided.
   ///
-  /// Note that this method returns immediately and does not wait the execution to complete. You must use an
-  /// [FFprobeSessionCompleteCallback] if you want to be notified about the result.
+  /// Note that this method returns immediately and does not wait the
+  /// execution to complete. You must use an
+  /// [FFprobeSessionCompleteCallback] if you want to be notified
+  /// about the result.
   static Future<FFprobeSession> executeWithArgumentsAsync(
       List<String> commandArguments,
       [FFprobeSessionCompleteCallback? completeCallback = null,
@@ -98,8 +104,8 @@ class FFprobeKit {
   }
 
   /// Extracts media information using the command provided. The command
-  /// passed to this method must generate the output in JSON format in order to
-  /// successfully extract media information from it.
+  /// passed to this method must generate the output in JSON format in order
+  /// to successfully extract media information from it.
   static Future<MediaInformationSession> getMediaInformationFromCommand(
           String command,
           [int? waitTimeout = null]) async =>
@@ -127,10 +133,13 @@ class FFprobeKit {
     return session;
   }
 
-  /// Starts an asynchronous FFprobe execution to extract the media information for the specified file.
+  /// Starts an asynchronous FFprobe execution to extract the media information
+  /// for the specified file.
   ///
-  /// Note that this method returns immediately and does not wait the execution to complete. You must use an
-  /// [MediaInformationSessionCompleteCallback] if you want to be notified about the result.
+  /// Note that this method returns immediately and does not wait the execution
+  /// to complete. You must use an
+  /// [MediaInformationSessionCompleteCallback] if you want to be notified about
+  /// the result.
   static Future<MediaInformationSession> getMediaInformationAsync(String path,
       [MediaInformationSessionCompleteCallback? completeCallback = null,
       LogCallback? logCallback = null,
@@ -151,11 +160,15 @@ class FFprobeKit {
         commandArguments, completeCallback, logCallback, waitTimeout);
   }
 
-  /// Starts an asynchronous FFprobe execution to extract media information using a command. The command passed to
-  /// this method must generate the output in JSON format in order to successfully extract media information from it.
+  /// Starts an asynchronous FFprobe execution to extract media information
+  /// using a command. The command passed to
+  /// this method must generate the output in JSON format in order
+  /// to successfully extract media information from it.
   ///
-  /// Note that this method returns immediately and does not wait the execution to complete. You must use an
-  /// [MediaInformationSessionCompleteCallback] if you want to be notified about the result.
+  /// Note that this method returns immediately and does not wait the
+  /// execution to complete. You must use an
+  /// [MediaInformationSessionCompleteCallback] if you want to be notified
+  /// about the result.
   static Future<MediaInformationSession> getMediaInformationFromCommandAsync(
           String command,
           [MediaInformationSessionCompleteCallback? completeCallback = null,
@@ -173,7 +186,8 @@ class FFprobeKit {
   /// information from it.
   ///
   /// Note that this method returns immediately and does not wait the execution
-  /// to complete. You must use an [MediaInformationSessionCompleteCallback] if you want to be
+  /// to complete. You must use an [MediaInformationSessionCompleteCallback]
+  /// if you want to be
   /// notified about the result.
   static Future<MediaInformationSession>
       getMediaInformationFromCommandArgumentsAsync(

@@ -303,11 +303,6 @@ class FFmpegKitInitializer {
       // const MethodChannel('flutter.arthenica.com/ffmpeg_kit');
       // return await _channel.invokeMethod<int>('getLogLevel');
 
-
-
-
-
-
       return _platform.ffmpegKitFlutterInitializerGetLogLevel();
     } on PlatformException catch (e, stack) {
       print("Plugin _getLogLevel error: ${e.message}");
