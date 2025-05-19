@@ -17,7 +17,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        mavenLocal()
     }
 }
 
@@ -25,7 +24,7 @@ apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 
 android {
-    namespace = "com.antonkarpenko.android"
+    namespace = "com.antonkarpenko.ffmpegkit"
 
     compileSdk = 33
 

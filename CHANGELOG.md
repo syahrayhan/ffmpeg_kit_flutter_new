@@ -1,3 +1,21 @@
+## 1.5.0
+
+* Added MacOS support by directly downloading and unpacking frameworks
+
+## 1.4.1
+
+* Updated README.md
+
+## 1.4.0
+
+* Added build.bat jni
+* Updated Gradle script in order to be able to download and unpack .aar on Windows.
+
+## 1.3.0
+
+* Moved from FFmpeg `http` to `full_gpl` for Android
+* Added downloading and unpacking of 6.0.2 `full-gpl` .aar
+
 ## 1.2.1
 
 * Added displaying of Android platform to pub.dev

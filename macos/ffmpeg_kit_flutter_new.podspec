@@ -121,8 +121,26 @@ Pod::Spec.new do |s|
   s.subspec 'full-gpl' do |ss|
     ss.source_files         = 'Classes/**/*'
     ss.public_header_files  = 'Classes/**/*.h'
-    ss.dependency 'ffmpeg-kit-macos-full-gpl', "6.0"
-    ss.osx.deployment_target = '10.15'
+    ss.osx.vendored_frameworks = 'Frameworks/ffmpeg-kit-macos-full-gpl/ffmpegkit.framework',
+                                 'Frameworks/ffmpeg-kit-macos-full-gpl/libavcodec.framework',
+                                 'Frameworks/ffmpeg-kit-macos-full-gpl/libavdevice.framework',
+                                 'Frameworks/ffmpeg-kit-macos-full-gpl/libavfilter.framework',
+                                 'Frameworks/ffmpeg-kit-macos-full-gpl/libavformat.framework',
+                                 'Frameworks/ffmpeg-kit-macos-full-gpl/libavutil.framework',
+                                 'Frameworks/ffmpeg-kit-macos-full-gpl/libswresample.framework',
+                                 'Frameworks/ffmpeg-kit-macos-full-gpl/libswscale.framework'
+
+    ss.osx.frameworks = 'AudioToolbox', 'CoreMedia'
+    ss.libraries = 'z', 'bz2', 'c++', 'iconv'
+    ss.osx.deployment_target = '10.15' # Adjust as needed for macOS
+
+    # Adding pre-install hook for macOS
+    s.prepare_command = <<-CMD
+      if [ ! -d "./Frameworks" ]; then
+        chmod +x ../scripts/setup_macos.sh
+        ../scripts/setup_macos.sh
+      fi
+    CMD
   end
 
   s.subspec 'full-gpl-lts' do |ss|

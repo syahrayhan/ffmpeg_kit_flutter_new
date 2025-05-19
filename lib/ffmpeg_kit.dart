@@ -1,22 +1,3 @@
-/*
- * Copyright (c) 2019-2022 Taner Sener
- *
- * This file is part of FFmpegKit.
- *
- * FFmpegKit is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * FFmpegKit is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with FFmpegKit.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 import 'package:ffmpeg_kit_flutter_platform_interface/ffmpeg_kit_flutter_platform_interface.dart';
 import 'package:flutter/services.dart';
 
@@ -48,11 +29,15 @@ class FFmpegKit {
     return session;
   }
 
-  /// Starts an asynchronous FFmpeg execution for the given command. Space character is used to split the command
-  /// into arguments. You can use single or double quote characters to specify arguments inside your command.
+  /// Starts an asynchronous FFmpeg execution for the given command.
+  /// Space character is used to split the command
+  /// into arguments. You can use single or double quote characters
+  /// to specify arguments inside your command.
   ///
-  /// Note that this method returns immediately and does not wait the execution to complete. You must use an
-  /// [FFmpegSessionCompleteCallback] if you want to be notified about the result.
+  /// Note that this method returns immediately and does not wait
+  /// the execution to complete. You must use an
+  /// [FFmpegSessionCompleteCallback] if you want to be notified
+  /// about the result.
   static Future<FFmpegSession> executeAsync(String command,
           [FFmpegSessionCompleteCallback? completeCallback = null,
           LogCallback? logCallback = null,
@@ -65,8 +50,10 @@ class FFmpegKit {
 
   /// Starts an asynchronous FFmpeg execution with arguments provided.
   ///
-  /// Note that this method returns immediately and does not wait the execution to complete. You must use an
-  /// [FFmpegSessionCompleteCallback] if you want to be notified about the result.
+  /// Note that this method returns immediately and does not
+  /// wait the execution to complete. You must use an
+  /// [FFmpegSessionCompleteCallback] if you want to be notified
+  /// about the result.
   static Future<FFmpegSession> executeWithArgumentsAsync(
       List<String> commandArguments,
       [FFmpegSessionCompleteCallback? completeCallback = null,
